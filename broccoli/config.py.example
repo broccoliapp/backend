@@ -1,0 +1,14 @@
+# vim: ft=python :
+# Example config file for Broccoli.
+# Name this file config.py when all the info has been filled in
+
+config = {
+	"development": {
+		"driver": "pgsql",
+		"host": "",     # IP of database server
+		"database": "", # database name
+		"user": "",     # database user
+		"password": "", # database password
+		"prefix": ""    # leave this blank
+	}
+}
