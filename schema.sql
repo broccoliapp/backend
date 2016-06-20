@@ -11,6 +11,7 @@ CREATE TABLE users (
 	is_reddit_linked BOOLEAN NOT NULL DEFAULT FALSE,
 	email TEXT,
 	password TEXT,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CHECK (
 		(is_reddit_linked AND email IS NULL AND password IS NULL) OR
 		(NOT is_reddit_linked AND email IS NOT NULL AND password IS NOT NULL)),
@@ -22,6 +23,7 @@ CREATE TABLE rooms (
 	room_id SERIAL PRIMARY KEY,
 	name VARCHAR(20) NOT NULL,
 	topic TEXT,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	UNIQUE (name)
 );
 
