@@ -6,7 +6,7 @@ BEGIN;
 
 CREATE TABLE users (
 	user_id SERIAL PRIMARY KEY,
-	username VARCHAR(20),
+	username VARCHAR(20) NOT NULL,
 	is_online BOOLEAN NOT NULL DEFAULT FALSE,
 	is_reddit_linked BOOLEAN NOT NULL DEFAULT FALSE,
 	email TEXT,
@@ -20,7 +20,7 @@ CREATE TABLE users (
 
 CREATE TABLE rooms (
 	room_id SERIAL PRIMARY KEY,
-	name VARCHAR(20),
+	name VARCHAR(20) NOT NULL,
 	topic TEXT,
 	UNIQUE (name)
 );
